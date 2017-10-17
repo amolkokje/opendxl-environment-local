@@ -26,12 +26,17 @@ function run() {
 }
 # NOTE: 'cd' command does not work with run()
 
-
+# -----------------------------------------------------------------------------------
+# install wget, python 2.7.14, setuptools, virtualenv, virtualenv-wrapper
+# -----------------------------------------------------------------------------------
 curl https://raw.githubusercontent.com/amolkokje/python_env_setup/master/centos_setup/centos_setup.sh > centos_env_setup.sh
 run chmod 775 centos_env_setup.sh
 run ./centos_env_setup.sh
 read -p "ENTER TO CONTINUE ..."
 
+# -----------------------------------------------------------------------------------
+# create virtual environment
+# -----------------------------------------------------------------------------------
 run source $HOME/.bashrc
 mkvirtualenv dxlclient
 # upgrade pip from 3.*(which comes with the environment to latest)
